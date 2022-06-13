@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Routes, Route } from "react-router-dom";
-import Alert from 'react-bootstrap/Alert';
 import Home from "./components/Home/Home";
 import Upload from "./components/Upload/Upload";
 import './App.css';
