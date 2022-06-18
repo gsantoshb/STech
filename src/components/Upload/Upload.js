@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
 
@@ -56,14 +56,14 @@ function Upload() {
       const config = {
         headers: {
           'content-type': 'multipart/form-data',
-          responseType: 'arraybuffer'
+          responseType: 'blob'
         },
       };
       const response=await axios.post(url, formData, config);
 
       if(response.status===200){
         setLoading(false);
-       const file = new Blob([response.data], {type:'image/png'}) ;      
+       const file = new Blob([response.data]," {type:'image/png'}") ;      
        FileSaver.saveAs(file);
       }
 
