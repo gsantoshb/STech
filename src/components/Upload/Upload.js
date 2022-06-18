@@ -1,8 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
-import { Buffer } from "buffer";
-import { saveAs } from 'file-saver';
 
 
 function Upload() {
@@ -45,7 +43,6 @@ function Upload() {
     var FileSaver = require('file-saver');
 
     const [file, setFile] = useState()
-    const [base64, setBase64]=useState(null);
     function handleChange(event) {
       setFile(event.target.files[0])
     }
@@ -64,7 +61,7 @@ function Upload() {
       };
       const response=await axios.post(url, formData, config);
 
-      if(response.status==200){
+      if(response.status===200){
         setLoading(false);
        const file = new Blob([response.data], {type:'image/png'}) ;      
        FileSaver.saveAs(file);
