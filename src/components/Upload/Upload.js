@@ -53,7 +53,7 @@ function Upload() {
      async function handleSubmit(event) {
       event.preventDefault();
       setLoading(true);
-      const url = 'http://localhost:5001/';
+      const url = 'http://34.150.226.51:5001/';
       const formData = new FormData();
       formData.append('file', file);
       const config = {
