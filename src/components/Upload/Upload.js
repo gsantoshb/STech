@@ -50,8 +50,8 @@ function Upload() {
      async function handleSubmit(event) {
       event.preventDefault();
       setLoading(true);
-      // const url = 'http://34.125.75.72:5000/';
-      const url = 'http://127.0.0.1:5000/';
+       const url = 'http://34.125.75.72:5000/';
+      //const url = 'http://127.0.0.1:5000/';
 
       const formData = new FormData();
       formData.append('file', file);
