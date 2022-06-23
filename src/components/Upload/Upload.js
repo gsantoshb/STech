@@ -50,7 +50,9 @@ function Upload() {
      async function handleSubmit(event) {
       event.preventDefault();
       setLoading(true);
-      const url = 'http://34.125.75.72:5000/';
+      // const url = 'http://34.125.75.72:5000/';
+      const url = 'http://127.0.0.1:5000/';
+
       const formData = new FormData();
       formData.append('file', file);
       const config = {
@@ -63,7 +65,7 @@ function Upload() {
 
       if(response.status===200){
         setLoading(false);
-       const file = new Blob([response.data]," {type:'image/png'}") ;      
+       const file = new Blob([response.data], {type:'image/png'}) ;      
        FileSaver.saveAs(file);
       }
 
@@ -75,6 +77,8 @@ function Upload() {
             <input type="file" onChange={handleChange}/>
             <button className="btn btn-lg btn-success" type="submit">Remove background!</button>
           </form>
+          <canvas width="100" height="100" id="MyCanvas">You don't have canvases </canvas>
+
       </div>
     );
   }
