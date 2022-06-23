@@ -7,7 +7,7 @@ COPY . /STech/
 RUN npm run build
 
 # Stage 1, based on NGINX to provide a configuration to be used with react-router
-# production environment
+# production environment1
 FROM nginx:alpine
 COPY --from=build /STech/build /usr/share/nginx/html
 RUN rm /etc/nginx/conf.d/default.conf
