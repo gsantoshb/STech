@@ -51,7 +51,7 @@ function Upload() {
       event.preventDefault();
       setLoading(true);
        const url = 'http://34.125.75.72:5000/';
-      //const url = 'http://127.0.0.1:5000/';
+      //const url = 'http://localhost:5000/';
 
       const formData = new FormData();
       formData.append('file', file);
@@ -65,7 +65,9 @@ function Upload() {
 
       if(response.status===200){
         setLoading(false);
-       const file = new Blob([response.data], {type:'image/png'}) ;      
+       var file = new Blob([response.data], {type:'image/png'}) ;      
+       //var blob = new Blob(["Hello, world!"], {type: "text/plain;charset=utf-8"});
+
        FileSaver.saveAs(file);
       }
 
